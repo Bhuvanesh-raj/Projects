@@ -1,0 +1,21 @@
+<%- include("header") -%>
+
+<div class="blog-main">
+    <div class="elements-area">
+            <% for(var i=0;i<contentsarray.length;i++) { %>
+            <div class="content">
+                <h2 class="tittle"><span><%= i+1 %>.   </span> <%= contentsarray[i].tittle %></h2>
+                <hr>
+                <p ><%= contentsarray[i].content %></p>
+            </div>
+            <% } %>
+            <form class="add-button-form"action="/Compose" method="get">
+                <button style="box-shadow: 5px 5px white 15px"  class="add-button" type="submit">ADD</button>
+            </form>
+    </div>
+</div>
+
+
+
+<%- include("footer") -%>
+

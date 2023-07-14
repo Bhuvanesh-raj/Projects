@@ -1,0 +1,85 @@
+const express=require("express");
+const ejs=require("ejs");
+const bodyParser=require("body-parser");
+const _=require("lodash");
+const mongoose=require("mongoose");
+
+const app=express();
+const contentarray =[];
+mongoose.connect("mongodb://localhost:27017/PortfolioDB");
+
+
+const BlogSchema= new mongoose.Schema({
+       tittle:String,
+       content: String
+});
+
+const Post= mongoose.model("BlogPost",BlogSchema);
+
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended:true}));
+
+app.set("view engine","ejs");
+
+
+
+app.get("/",function(req,res){
+    res.render("main");
+});
+app.get("/Compose",function(req,res){
+    res.render("Compose");
+});
+app.post("/Compose",function(req,res){
+    // const head=req.body.tittle;
+    // const body=req.body.content;
+    // const obj={
+    //     tittle : head,
+    //     content: body
+    // };
+    // contentarray.push(obj);
+    
+    res.redirect("/Blog");
+});
+app.post("/add",function(req,res){
+    res.render("Compose");
+});
+app.get("/main",function(req,res){
+    res.render("main");
+})
+app.get("/Blog",function(req,res){
+    res.render("Blog",{contentsarray:contentarray});
+});
+
+app.listen(3000,function(){
+    console.log("server running on port 3000");
+});
+
+
+
+
+
+
+
+//blog code
+
+
+<%- include("header") -%>
+
+<div class="blog-main">
+    <div class="elements-area">
+            <% for(var i=0;i<contentsarray.length;i++){ %>
+            <div class="content">
+                <h2 class="tittle"><span> <%= i+1 %>.   </span> <%= contentsarray[i].tittle %></h2>
+                <hr>
+                <p ><%= contentsarray[i].content %></p>
+            </div>
+            <% } %>
+            <form action="/Compose" method="post">
+                <button type="submit">ADD</button>
+            </form>
+    </div>
+</div>
+
+
+
+<%- include("footer") -%>
