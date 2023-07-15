@@ -4,16 +4,21 @@
     <div class="elements-area">
             <% for(var i=0;i<contentsarray.length;i++) { %>
             <div class="content">
-                <h2 class="tittle"><span><%= i+1 %>.   </span> <%= contentsarray[i].tittle %></h2>
+                <div class="tittle-div">
+                    <h2 class="tittle"><span><%= i+1 %>.   </span> <%= contentsarray[i].tittle %></h2>
+                    <form style="display: inline; transform: translateY(-30px); " target="/Blog" method="post">
+                        <button type="submit" style="color: black   ;" name="deletebtn" value="<%= contentsarray[i]._id %>">X</button>
+                    </form>
+                </div>
                 <hr>
-                <p ><%= contentsarray[i].content %></p>
+                <p ><%= contentsarray[i].content.slice(0,250) %> <a style="text-decoration: none;color: rgb(4, 0, 255);font-weight:lighter; font-size: 15px;" href="/Blog/<%= contentsarray[i].tittle %>">Readmore...</a></p>
             </div>
             <% } %>
-            <form class="add-button-form"action="/Compose" method="get">
-                <button style="box-shadow: 5px 5px white 15px"  class="add-button" type="submit">ADD</button>
-            </form>
+        </div>
+        <form class="add-button-form" action="/Compose" method="get">
+          <button style="box-shadow: 5px 5px white 15px"  class="add-button" type="submit">ADD</button>
+        </form>
     </div>
-</div>
 
 
 

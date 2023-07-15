@@ -1,10 +1,25 @@
 <%- include("header")  -%>
-
-<div class="vertical-line">
-    <span></span>
+<div class="contact-main">
+    <div class="contact-container-div">
+         <div class="contact-description">
+            <h1>Let's chat</h1>
+            <h1>Tell me about your</h1>
+            <h1>Project</h1>
+         </div>
+         <form action="/contact" method="post">
+         <div class="contact-information">
+               <h1 style="text-shadow: red 2px 2px;">Contact Me</h1>
+               <input type="text" placeholder="First name">
+               <input type="text" placeholder="Last name">
+               <input type="text" placeholder="Email">
+               <input type="text" placeholder="Phone Number">
+               <input type="text" placeholder="Type of Service">
+               <textarea type="text" placeholder="Descibe your project..." maxlength="2500" rows="5" cols="150"></textarea>
+               <button class="second-button" type="submit">SUBMIT</button>
+            </div>
+        </form>
+    
     </div>
 
-
-
-
+</div>
 <%- include("footer")  -%>

@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+   
     <link rel="stylesheet" href="css/styles.css">
+
+   
 </head>
 <body>
 
@@ -18,4 +21,16 @@
             <a href="Contact">CONTACT</a>
         </nav>
     </header>
-    
+<script>
+    const header=document.querySelector("header");
+    window.addEventListener("scroll",function(){
+          const y=this.scrollY.toFixed();
+          if(y>=300){
+             header.style.position="absolute";
+          }
+          else{
+            header.style.position="fixed";
+          }
+    });
+
+</script>   

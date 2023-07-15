@@ -1,28 +1,42 @@
-.demo-div{
-    background-color: antiquewhite;
-    /* overflow: hidden; */
-}
 body{
-    background-color: blue;
+    background-color: rgb(249, 249, 249);
+}
+.container{
+    margin-left: 200px;
+    margin-top: 200px;
+    margin-right: 50px;
+}
+p{
+
+    position: relative;
 }
 h1{
-    margin-top: 100px;
-    margin-left: 100px;
-    display: inline;
-    overflow: hidden;
-    overflow: hidden;
     position: relative;
-    background-color: aquamarine;
+}
+.overflow{
+    overflow: hidden;
 }
 
-h1::after{
-    overflow: hidden;
-    content: " ";
+p::after,h1::after{
+    content: "";
     position: absolute;
-    right: 0;
+    right: -100px;
+    height: 150%;
+    width: 255%;
+    top: 0;
+    transform: skewX(-50deg);
     background-color: aqua;
-    width: 10%;
-    height: 100%;
-    margin-top: 20px;
-    transform: skewY(20deg);
+}
+
+p::after{
+    animation: ani 2s forwards linear 0.8s;
+}
+h1::after{
+    animation: ani 2s forwards linear 0.2s;
+}
+
+@keyframes ani {
+  to{
+    width: 0;
+  }    
 }

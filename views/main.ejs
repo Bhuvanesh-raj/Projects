@@ -2,92 +2,16 @@
 <div class="page">
     <div class="main-contatiner">
         <div class="text-content">
-            <h1 class="first">Hey! Glad to see you!</h1>
+            <h1 class="first" >Hey! Glad to see you!</h1>
             <h1 class="h1">I'm Bhuvanesh raj</h1>
             <h2>I'm a <span></span></h2>
             <h3>Welcome to my web page___</h3>
             <div class="button-div">
-                <button>Let's Go</button>
-                <button>Download CV</button>
+                <button  class="first-button" >Let's Go</button>
+                <a style="text-decoration: none;" href="/RESUME/Bhuvanesh Resume.pdf" download="BHUVANESH RAJ RESME"><button class="second-button">Download CV</button></a>
             </div>
          </div>
         <div class="image-content">
       </div>
     </div>
-<!-- second page start -->
-<hr>
-<div class="second-container ">
-  <h1 id="element1" style="color: black;">ABOUT</h1>
-  <hr>
-  <h2 id="element2" onscroll="blurremove()">SKILLS</h2>
-  <ol>
-    <li id="element3"><h3 >WEB DEVELOPEMENT</h3></li>
-    <p id="element4">
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-   </p> 
-    <hr>
-    <li id="element5"><h3>3D MODELING</h3></li>
-    <p id="element6">
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-    </p> 
-    <hr>
-    <li id="element7"><h3>VIDEO EDITING</h3></li>
-    <p id="element8">
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-    </p>
-      
-  </ol>
-   
-</div>
-<!--  second page end   -->
-<script>
-      const element1=document.getElementById("element1");
-      const element2=document.getElementById("element2");
-      const element3=document.getElementById("element3");
-      const element4=document.getElementById("element4");
-      const element5=document.getElementById("element5");
-      const element6=document.getElementById("element6");
-      const element7=document.getElementById("element7");
-      const element8=document.getElementById("element8");
-      const elements=[element1,element2,element3,element4,element5,element6,element7,element8];
-      elements.forEach(function(element){
-        element.classList.add("blur");
-      });
-      window.addEventListener("scroll",function(){
-      const y=this.scrollY.toFixed();
-      console.log(y);
-      
-      if(y>=234){
-         element1.classList.add("blur-animation");
-         if(y>=320){
-            element2.classList.add("blur-animation");
-            if(y>=400){
-               element3.classList.add("blur-animation");
-               if(y>=498){
-                  element4.classList.add("blur-animation");
-                  if(y>=780){
-                      element5.classList.add("blur-animation");
-                      if(y>=840){
-                        element6.classList.add("blur-animation");
-                        if(y>=1195){
-                          element7.classList.add("blur-animation");
-                          if(y>=1275){
-                            element8.classList.add("blur-animation");
-                            
-                          }
-                        }
-                      } 
-                  }
-               }
-            }
-         }
-        }
-      
-        // scroll for about
-        function scroll(){
-          window.screenY=100;
-        }
-      
-   });
-</script>
 <%- include("footer") -%>

@@ -21,6 +21,7 @@ header{
     z-index: 20;
     right: 0;
     left: 0;
+    top: 0;
     position: fixed;
     /* background-color: #21f5f1; */
     background-color: #252A34;
@@ -78,6 +79,7 @@ nav a::after{
     position: relative;
     flex-wrap: wrap;
     margin: 0;
+    margin-top: 100px;
     padding-top: 100px;
     z-index: 0;
     gap: 50px;
@@ -92,7 +94,9 @@ nav a::after{
    background-attachment: fixed;
    background-repeat: no-repeat;
     /* background: linear-gradient(to right,#30A2FF,#ffffff,#30A2FF); */
-    min-height: 100vh;
+    height: 72vh;
+    resize: none;
+    
 }
 
 div >.text-content{
@@ -129,7 +133,7 @@ div >.text-content{
   width: 100%;
   height: 100%;
   /* background-color: #08D9D6; */
-  background-color: #fb8600;;
+  background-color: #fb8600;
 }
 .main-contatiner > .text-content >h1.first::after{
     animation: textopening 0.8s linear forwards 1.57s;
@@ -283,18 +287,44 @@ div .image-content{
 .main-contatiner .button-div{
     margin-top: 40px;
 }
-.main-contatiner .button-div button{
-      background-color: transparent;
+
+
+button.first-button{
+      background-color: white;
       font-size: 20px;
       font-weight: 700;
       cursor: pointer;
-      color: white;
+      color:#fb8600;   
       border: 3px solid white;
       border-radius: 20px;
       padding: 8px 11px;
       margin-right: 10px;
       transition: 0.2s;
       box-shadow: rgba(58, 58, 58, 0.426) 10px 10px 20px;
+}
+button.second-button{ 
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;     
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 8px 11px;
+    margin-right: 10px;
+    transition: 0.2s;
+    box-shadow: rgba(58, 58, 58, 0.426) 10px 10px 20px;
+}
+button.second-button >a{
+    color: white    ;
+}
+button.second-button:hover{
+    color: #fb8600;
+    background-color: white;
+}
+button.first-button:hover{
+   background-color: #fb8600;
+   color: white;     
 }
 /* buttons styles end */
 @media only screen and (max-width: 1270px) {
@@ -307,54 +337,94 @@ div .image-content{
 
 /* second page start */
 
-
-.page >.second-container{
+.aboutpage{
+    padding-top: 150px;
+}
+.aboutme-div{
+    display: flex;
+    min-width: 1000px;
+    justify-content: space-between;
+}
+.aboutme-div> .information-div>.overflow> h1{
+    margin-bottom: 20px;
+}
+.aboutme-div >.information-div span{
+    color: #000000;
+}
+.aboutpage >.second-container,.aboutpage >.aboutme-div{
     /* background-color: #252A34; */
-    border: 5px solid rgb(123, 123, 123);
+    border: 5px solid rgb(0, 0, 0);
     border-radius: 30px;
     /* filter:blur(1px); */
     margin-left: 30px;
-    background-color: rgb(245, 136, 54);
+    background-color:#fb8600;
     padding-right: 50px;
     position: relative;
-    margin-top: 50px;
     z-index: 5;
     padding-top: 50px;
     padding-left: 5%;
     overflow-x: hidden;
     color: azure; 
     width: 85%;
-    box-shadow: #000000 0px 0px 20px;
-    margin-bottom: 200px;
+    box-shadow: #000000 8px 8px;
+    margin-bottom: 50px;
+}
+.intro-animation-about{
+    position: relative;
+}
+.intro-animation-about::after{
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: 0;
+    height: 100%;
+    width: 125%;
+    transform: skewX(-30deg);
+    background-color:#fb8600;
+    height: 100%;
+    width: 125%;
+    
+   
+}
+.intro-animation-remover{
+    position: relative;
+}
+.intro-animation-remover::after{
+    animation: ani 2s forwards linear 0.3s;   
 }
 
-.blur{
-    filter: blur(4px);
-} 
-.blur-animation{
-    filter: blur(4px);
-    animation: blur 0.3s linear forwards 0.5s; 
-    
+.overflow{
+    overflow: hidden;
 }
-@keyframes blur {
+@keyframes ani {
     to{
-        filter: blur(0px);
+      width: 0;
     }    
-}
-.page > .second-container >ol> li{
+  }
+.aboutpage > .second-container >ol> div>li{
     font-size: 30px;
 }
-.page > .second-container >h2{
+.aboutpage > .second-container>div >h2{
     font-size: 30px;
     font-weight: 800;
     letter-spacing: 1px;
 }
-.page >.second-container> ol>p{
+.aboutpage >.second-container> ol>div>p{
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #000000;
     margin-bottom: 35px;
+}
+@media only screen and (max-width: 1270px) {
+    
+    div.face-div >img {
+        display: none;
+    }
+    div.aboutme-div{
+        padding-bottom: 50px;
+        min-width: 700px;
+    }
 }
 /* second page end */
 
@@ -378,37 +448,41 @@ div >form >input{
    border-radius: 20px;
    height: 50px;
    font-size: 15px;
+   color:black ;
+    font-size: 15px;
+    padding-left: 10px;
    min-width: 200px;
    display: block;
    padding-left: 10px;
    border: #000000 2px solid;   
    width: 100%;
+   font-weight: 600;
    transition: 0.2s;
 }
-div >form >input:focus{
-    border: #e81313 2px solid;
 
-}
-
-
-div> form> textarea.content{
+div.input-container> form> textarea.content{
     border-radius: 20px;
     display: block;
     width: 100%;
     font-size: 15px;
     resize: vertical;
+    color:black ;
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 10px;
     min-height: 100px;
     max-height: 350px;
     overflow-x: hidden;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     padding-top: 10px;
     max-width: 100%;
+    overflow-y: hidden;
     /* position: absolute; */
     max-width: 460px;
 }
 div> form> textarea.content::placeholder{
     color: #000000;
-    font-weight: 700;
+    font-weight: 800;
 
 }
 div >form >button{
@@ -424,10 +498,13 @@ div >form >button{
     background-color: #fb8600;
     transition: 0.2s;
 }
-div.input-container >form >button:hover,.button-div >button:hover{
+div.input-container >form >button:hover,.button-div >button.second-button:hover{
     background-color: white;
     color: #fb8600;
     border-color: #ffffff;
+}
+.button-div > button.first-button:hover{
+    background-color: rgb(245, 136, 54);
 }
 
 div.second-main{
@@ -442,26 +519,72 @@ div.second-main{
 
 
 /* style for the blog page */
+.tittle-div{
+    display: flex;
+    justify-content: space-between;
+}
 
-.elements-area>.content{
+
+.elements-area> div.content{
     width: 80%;
     font-size: 20px;
     color: white;
     padding: 5px 30px;
     border: 5px solid black;
+    box-shadow: #000000 8px 8px ;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-left: 50px;
 }
-.elements-area{
+/* .elements-area{
     position: relative;
     display: flex;
+    background-color: #e81313;
     flex-direction: column;
     top: 100px;
     align-items: center;
     top: 150px;
     padding-bottom: 100px;
+} */
+
+/* grid cheking */
+
+.elements-area{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    top: 100px;
+    align-items: center;
+    padding-right: 1%;
+    top: 150px;
+    padding-bottom: 100px;
 }
+
+button.add-button{
+    position: relative; 
+    right: 0px;
+    left: 190px;
+    top: 50px;
+    transition: 0.1s;
+    color: #ffffff;
+     box-shadow: #000000 0px 0px 0px;
+    border-color: #ffffff;
+}
+
+
+@media only screen and (max-width: 1190px){
+     .elements-area{
+        grid-template-columns: 1fr;
+        padding-right: 0;
+     }
+    
+}
+
+
+
+/* grid cheking */
+
+
 .elements-area > .content >p {
     font-size: 18px;
     letter-spacing: 1px;
@@ -473,14 +596,14 @@ div.second-main{
     width: 100vw;
     height: 100vh;
 }
-button.add-button{
+/* button.add-button{
     position: relative; 
     right: 60px;
     transition: 0.1s;
     color: #ffffff;
      box-shadow: #000000 0px 0px 0px;
     border-color: #ffffff;
-}
+} */
 
 button.add-button:hover{
     box-shadow: #ffffff 0px 3px 10px;
@@ -490,21 +613,112 @@ button.add-button:hover{
 /* style for the blog page */
 
 /* contact page start*/
-div.vertical-line{
-    height: 0   ;
-    width: 5px;
-    position: absolute;
-    left: 100px;
-    top: 200px;
-    bottom: 20px;
-    background-color: #000000;
-    animation: linefall 0.5s forwards linear 0.5s;
+
+
+
+div.contact-main{
+    /* background-color: #7f7f7f; */
+    background-color: #fb8600;
+
+    align-items: center;
+    height: 100vh;
 }
 
-@keyframes linefall {
-    to{
-        height: 100vh;
-    }
+div.contact-container-div{
+   height: 600px;
+   display: flex;
+   justify-content: space-between;
+    padding-top: 95px;
+    /* background-color: #e81313; */
+    background-color: #fb8600;
 }
+
+div.contact-description{
+    width: 500px;
+    padding-top: 200px;
+    padding-left: 2%;
+    width: 500px;
+    min-width: 400px;
+    margin-left: 100px;
+    /* background-color: aqua; */
+    background-color: #fb8600;
+
+}
+
+div.contact-description >h1{
+    font-size: 50px;
+    color: white;
+    position: relative;
+}
+div.contact-description >h1::after{
+    position: absolute;
+    content: " ";
+    right:  0;
+    width: 100%;
+    height: 100%;
+    background-color: #fb8600;
+    animation: textopening 0.8s linear forwards 1.57s;
+
+}
+
+div.contact-information{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 470px;
+    padding-top: 30px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 40px;
+    margin-right: 150px;
+    margin-top: 50px;
+    border: 5px solid black;
+    border-radius: 30px;
+    contain: content;
+    box-shadow: #000000 10px 10px;
+    /* background-color: blueviolet; */
+    background-color: #fb8600;
+
+}    
+
+div.contact-information >input{
+    border-radius: 5px;
+    color:black ;
+    font-size: 15px;
+    padding-left: 10px;
+    /* position: relative; */
+    height: 35px;
+    border: 2px solid rgb(129, 2, 2);
+}    
+div.contact-information >input:focus,div.contact-information >textarea:focus{
+    background-color: #eaeaea;
+    border: 2px solid rgb(163, 163, 163);
+    
+}
+div.contact-information >input::placeholder,div.contact-information >textarea::placeholder{
+    font-size: 15px;
+    /* padding-left: 10px; */
+}
+
+
+div.contact-information >textarea{
+    border-radius: 5px;
+    resize: vertical;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 78px;
+    border: 2px solid black;
+    color:black ;
+    font-size: 15px;
+    padding-left: 10px;
+    
+}    
+div.contact-information >h1{
+    padding-left: 165px;
+}    
+
+
+
+
 
 /* contact page end */
