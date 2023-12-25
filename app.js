@@ -3,7 +3,6 @@ const ejs=require("ejs");
 const bodyParser=require("body-parser");
 const _=require("lodash");
 const mongoose=require("mongoose");
-
 const app=express();
 const dbURI="mongodb://localhost:27017/PortfolioDB";
 mongoose.connect(dbURI);
@@ -36,7 +35,7 @@ app.get("/", async function(req,res){
     if (count===0){
         const obje= new Pointer({
             _id:1,
-            i:1
+             i:1
         });
         obje.save();
     }
@@ -87,22 +86,22 @@ app.post("/Blog",function(req,res){
         console.log(("data deleted"));
     });
     res.redirect("/Blog")
-})
-
-app.get("/Blog/:parameter", async function(req,res){
-    const blogtittle=req.params.parameter;
-    const blogdata= await Post.find();
-    blogdata.forEach(function(blog){
-        if(blog.tittle==blogtittle){
-            stittle=blog.tittle;
-            scontent=blog.content;
-            console.log(stittle);
-            console.log("Match foundddd");
-        }
-    });
-    res.render("individualBlog",{itittle:stittle,icontent:scontent}); 
-   
 });
+
+// app.get("/Blogs/:p", async function(req,res){
+//     const blogtittle=req.params.p;
+//     const blogdata= await Post.find();
+//     blogdata.forEach(function(blog){
+//         if(blog.tittle==blogtittle){
+//             stittle=blog.tittle;
+//             scontent=blog.content;
+//             console.log(stittle);
+//             console.log("Match foundddd");
+//             res.render("individualBlog",{itittle:stittle,icontent:scontent}); 
+//         }
+//     });
+//    res.send("<h1>Blog not found </h1>");
+// });
 
 
 
